@@ -8,6 +8,11 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
     <!-- The splash screen theme. It sets the main window background to the splash screen image -->
     <style name="AppTheme.Splashscreen">
         <item name="android:windowBackground">@drawable/ic_splashscreen</item>

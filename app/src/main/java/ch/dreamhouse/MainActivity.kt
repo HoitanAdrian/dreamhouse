@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         // Reset the theme to the default one from the launcher theme.
-        setTheme(R.style.AppTheme)
+        setTheme(R.style.AppTheme_NoActionBar)
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
