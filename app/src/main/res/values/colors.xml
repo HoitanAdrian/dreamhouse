@@ -6,4 +6,5 @@
     <color name="colorTextTitle">#666666</color>
     <color name="colorTextSubtitle">#999999</color>
     <color name="colorTextPrice">#e63434</color>
+    <color name="colorFavoriteIcon">#ffffff</color>
 </resources>

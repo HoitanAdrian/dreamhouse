@@ -8,6 +8,8 @@ import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
 import android.view.View
 import ch.dreamhouse.databinding.ActivityMainBinding
+import ch.dreamhouse.models.database.AppDatabase
+import ch.dreamhouse.models.database.ArticleFavoritesHelper
 import ch.dreamhouse.ui.adapters.ArticleListAdapter
 import ch.dreamhouse.viewmodels.ArticleListViewModel
 import kotlinx.android.synthetic.main.activity_main.*
@@ -23,6 +25,10 @@ class MainActivity : AppCompatActivity() {
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        // Initialize Database and associated helpers
+        var mDb = AppDatabase.getInstance(this)
+        ArticleFavoritesHelper.initialize(mDb?.articleFavoritesDataDao())
 
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
         binding.articlesList.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)

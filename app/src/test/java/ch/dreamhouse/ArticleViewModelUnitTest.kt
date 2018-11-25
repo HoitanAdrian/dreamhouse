@@ -19,7 +19,7 @@ class ArticleViewModelUnitTest {
         // Create a new article view model
         val pictures = listOf("test_picture1", "test_picture2")
         val viewModel = ArticleViewModel()
-        viewModel.bind(Article("test_title", "test_street", "test_zip", "test_city", 1234, "test_currency", pictures))
+        viewModel.bind(Article(116237026, "test_title", "test_street", "test_zip", "test_city", 1234, "test_currency", pictures))
 
         // Check if all data is binded and formatted correctly
         assertEquals("test_title", viewModel.articleTitle.value)

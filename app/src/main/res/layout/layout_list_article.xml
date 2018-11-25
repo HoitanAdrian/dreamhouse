@@ -20,20 +20,38 @@
             android:layout_height="@dimen/article_list_image_height"
             card_view:cardElevation="0dp"
             card_view:cardCornerRadius="@dimen/article_list_image_corner_radius">
-            <android.support.v4.view.ViewPager
-                android:id="@+id/list_article_view_pager"
-                android:layout_height="match_parent"
-                android:layout_width="match_parent"/>
-            <android.support.design.widget.TabLayout
-                android:id="@+id/list_article_dot_indicator"
-                android:layout_width="@dimen/article_list_pictures_pager_width"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="@dimen/article_list_pictures_pager_margin_top"
-                app:tabBackground="@drawable/selector_article_list_pager"
-                app:tabMode="fixed"
-                app:tabGravity="center"
-                app:tabIndicatorHeight="0dp"/>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/list_article_view_pager"
+                    android:layout_height="match_parent"
+                    android:layout_width="match_parent"/>
+                <android.support.design.widget.TabLayout
+                    android:id="@+id/list_article_dot_indicator"
+                    android:layout_width="@dimen/article_list_pictures_pager_width"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    app:tabBackground="@drawable/selector_article_list_pager"
+                    app:tabMode="fixed"
+                    app:tabGravity="center"
+                    app:tabIndicatorHeight="0dp"/>
+                <ImageButton
+                    android:id="@+id/article_favorite"
+                    android:layout_width="@dimen/article_list_favorite_size"
+                    android:layout_height="@dimen/article_list_favorite_size"
+                    android:adjustViewBounds="true"
+                    android:scaleType="fitCenter"
+                    android:layout_marginTop="@dimen/general_normal_padding"
+                    android:layout_marginRight="@dimen/general_normal_padding"
+                    android:layout_alignParentRight="true"
+                    android:background="?selectableItemBackgroundBorderless"
+                    android:src="@drawable/ic_article_list_not_favorite"
+                    app:favoriteVisibility="@{viewModel.getFavoriteVisibility()}"
+                    android:onClick="@{() -> viewModel.toggleFavorite()}"
+                    android:tint="@color/colorFavoriteIcon"/>
+            </RelativeLayout>
         </android.support.v7.widget.CardView>
 
         <ImageView

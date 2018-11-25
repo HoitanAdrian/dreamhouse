@@ -65,6 +65,7 @@ class ArticleListViewModelUnitTest {
 
         viewModel.articles.observe({ lifecycle }) { articles ->
             assertEquals(1, articles?.size)
+            assertEquals(116237026, articles?.get(0)?.advertisementId)
             assertEquals("test_title", articles?.get(0)?.title)
             assertEquals("test_street", articles?.get(0)?.street)
             assertEquals("test_zip", articles?.get(0)?.zip)
