@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable name="viewModel" type="ch.dreamhouse.viewmodels.ArticleViewModel" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/general_normal_padding"
+        android:paddingRight="@dimen/general_normal_padding"
+        android:paddingTop="@dimen/general_normal_padding"
+        android:paddingBottom="@dimen/general_normal_padding">
+        <android.support.v7.widget.CardView
+            android:id="@+id/article_pictures"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/article_list_image_height"
+            card_view:cardElevation="0dp"
+            card_view:cardCornerRadius="@dimen/article_list_image_corner_radius">
+            <android.support.v4.view.ViewPager
+                android:id="@+id/list_article_view_pager"
+                android:layout_height="match_parent"
+                android:layout_width="match_parent"/>
+            <android.support.design.widget.TabLayout
+                android:id="@+id/list_article_dot_indicator"
+                android:layout_width="@dimen/article_list_pictures_pager_width"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/article_list_pictures_pager_margin_top"
+                app:tabBackground="@drawable/selector_article_list_pager"
+                app:tabMode="fixed"
+                app:tabGravity="center"
+                app:tabIndicatorHeight="0dp"/>
+        </android.support.v7.widget.CardView>
+
+        <ImageView
+            android:id="@+id/article_location_icon"
+            android:layout_width="@dimen/article_list_subtitle_text_size"
+            android:layout_height="@dimen/article_list_subtitle_text_size"
+            android:layout_marginTop="10dp"
+            android:src="@drawable/ic_article_list_location"
+            android:tint="@color/colorTextSubtitle"
+            app:layout_constraintTop_toBottomOf="@id/article_pictures"/>
+
+        <TextView
+            android:id="@+id/article_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/general_small_padding"
+            android:layout_marginLeft="@dimen/general_normal_padding"
+            style="@style/ArticleListText.Location"
+            app:mutableText="@{viewModel.getArticleLocation()}"
+            app:layout_constraintTop_toBottomOf="@id/article_pictures"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <TextView
+            android:id="@+id/article_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/general_small_padding"
+            style="@style/ArticleListText.Price"
+            app:mutableText="@{viewModel.getArticlePriceFormatted()}"
+            app:layout_constraintTop_toBottomOf="@id/article_pictures"
+            app:layout_constraintEnd_toEndOf="parent"  />
+
+        <TextView
+            android:id="@+id/article_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/ArticleListText.Title"
+            app:mutableText="@{viewModel.getArticleTitle()}"
+            app:layout_constraintTop_toBottomOf="@id/article_price"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

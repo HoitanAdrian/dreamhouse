@@ -34,6 +34,7 @@ class ArticleListViewModel: BaseViewModel() {
 
     private fun onRetrieveArticlesStart(){
         loadingVisibility.value = true
+        hasErrors.value = false
     }
 
     private fun onRetrieveArticlesFinish(){

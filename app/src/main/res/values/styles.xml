@@ -13,4 +13,30 @@
         <item name="android:windowBackground">@drawable/ic_splashscreen</item>
     </style>
 
+    <style name="ErrorMessageText" parent="@android:style/TextAppearance.Medium">
+        <item name="android:fontFamily">@font/oswald_light</item>
+        <item name="android:textColor">@color/colorTextTitle</item>
+        <item name="android:textSize">@dimen/error_text_size</item>
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="ArticleListText" parent="@android:style/TextAppearance.Medium">
+        <item name="android:fontFamily">@font/oswald_light</item>
+    </style>
+
+    <style name="ArticleListText.Title">
+        <item name="android:textColor">@color/colorTextTitle</item>
+        <item name="android:textSize">@dimen/article_list_title_text_size</item>
+    </style>
+
+    <style name="ArticleListText.Location">
+        <item name="android:textColor">@color/colorTextSubtitle</item>
+        <item name="android:textSize">@dimen/article_list_subtitle_text_size</item>
+    </style>
+
+    <style name="ArticleListText.Price">
+        <item name="android:textColor">@color/colorTextPrice</item>
+        <item name="android:textSize">@dimen/article_list_price_text_size</item>
+    </style>
+
 </resources>
